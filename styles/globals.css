@@ -2,26 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.contenedor {
+  width: 70%;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.listado-gastos {
+  margin-top: 5rem;
+}
+.listado-gastos h2 {
+  color: var(--gris-oscuro);
+  font-weight: 900;
+}
+
+.gasto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.cantidad-gasto {
+  font-size: 2rem;
+  color: gray;
+  font-weight: 900;
+}
+
+.contenido-gasto {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contenido-gasto img {
+  width: 10rem;
+}
+
+.descripcion-gasto p {
+  margin: 0 0 0.3rem 0;
+}
+.descripcion-gasto .categoria {
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.descripcion-gasto p {
+  margin-bottom: 1rem;
+}
+.descripcion-gasto .nombre-gasto {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.descripcion-gasto .nombre-gasto:hover {
+  cursor: pointer;
+}
+.descripcion-gasto .fecha-gasto {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gris-oscuro);
+}
+.descripcion-gasto .fecha-gasto span {
+  font-weight: 400;
+}
+
+/*** SWIPE LIST OVERRIDES **/
+.swipe-action__leading {
+    background-color: #3b82f6;
+    color: white;
+    margin-bottom: 2rem;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  
+  .swipe-action__trailing {
+    background-color: #db2777;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .swipeable-list .swipe-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    text-align: right;
+  }
