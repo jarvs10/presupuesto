@@ -1,3 +1,4 @@
+import { generarResultadoDeMillon } from '@/utilities';
 import React, { useEffect, useState } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 
@@ -54,9 +55,9 @@ const Control = ({presupuesto, gastos, setPresupuesto,setIsValid}) => {
           <div>
             <button onClick={handleReset} className='py-3 text-white bg-rose-600 hover:bg-rose-800 w-full mb-4 text-lg font-bold uppercase rounded-md'>Reset App</button>
           </div>
-          <h3 className='text-2xl font-bold mb-1 text-indigo-500'>Presupuesto: <span className='font-semibold text-gray-500'>${presupuesto}</span></h3>
-          <h3 className='text-2xl font-bold mb-1 text-indigo-500'>Gastado: <span className='font-semibold text-gray-500'>${gastado}</span></h3>
-          <h3 className={restante < 0 ? 'text-red-500 text-2xl font-bold' : 'text-2xl font-bold text-indigo-500'}>Disponible: <span className='font-semibold text-gray-500'>${restante}</span></h3>
+          <h3 className='text-2xl font-bold mb-1 text-indigo-500'>Presupuesto: <span className='font-semibold text-gray-500'>${generarResultadoDeMillon(presupuesto)}</span></h3>
+          <h3 className='text-2xl font-bold mb-1 text-indigo-500'>Gastado: <span className='font-semibold text-gray-500'>${generarResultadoDeMillon(gastado)}</span></h3>
+          <h3 className={restante < 0 ? 'text-red-500 text-2xl font-bold' : 'text-2xl font-bold text-indigo-500'}>Disponible: <span className='font-semibold text-gray-500'>${generarResultadoDeMillon(restante)}</span></h3>
         </div>
       </div>
     </div>

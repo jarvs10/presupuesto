@@ -15,3 +15,13 @@ export const generarFecha = fecha => {
 
     return fechaNueva.toLocaleDateString('es-ES', opciones);
 }
+
+export const generarResultadoDeMillon = (numero) => {
+    // Divide el número por un millón
+    const resultado = numero / 1;
+  
+    // Formatea el número con separadores de miles y dos decimales
+    const resultadoFormateado = resultado.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  
+    return resultadoFormateado;
+  }
