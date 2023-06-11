@@ -1,4 +1,4 @@
-import { generarFecha } from '@/utilities';
+import { generarFecha, generarResultadoDeMillon } from '@/utilities';
 import { LeadingActions, SwipeableList, SwipeableListItem, SwipeAction, TrailingActions } from 'react-swipeable-list';
 import 'react-swipeable-list/dist/styles.css'
 
@@ -59,7 +59,7 @@ const ListGastos = ({gasto, handleDelete, setGastoEditar}) => {
               </p>
             </div>
           </div>
-          <p className="cantidad-gasto">${cantidad}</p>
+          <p className="cantidad-gasto">${generarResultadoDeMillon(cantidad)}</p>
         </div>
       </SwipeableListItem>
 
